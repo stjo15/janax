@@ -1,0 +1,321 @@
+/**
+ * Layout of the grid elements 
+ */
+ 
+#header {
+    .column(@columns);
+    margin: 66px 0 66px 0;
+    text-align: center;
+}
+
+#navbar,
+#footer {
+    .column(@columns);
+    margin-bottom: 22px;
+}
+
+#flash {
+    .column(@columns);
+    margin-bottom: 22px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+ 
+#main {
+    .column(@columns / 4 * 3);
+    margin-bottom: 22px;
+    min-height: 200px;
+    border-top: 1px solid #ccc;
+}
+ 
+#featured-1,
+#featured-2,
+#featured-3 {
+    .column(@columns / 3);
+    margin-bottom: 22px;
+}
+
+#triptych-1,
+#triptych-2 {
+    .column(@columns / 2);
+    margin-bottom: 22px;
+    overflow: auto;
+}
+ 
+#lsidebar,
+#rsidebar,
+#footer-column-1,
+#footer-column-2,
+#footer-column-3, 
+#footer-column-4 {
+    .column(@columns / 4 - 10px);
+    margin-bottom: 22px;
+    border-top: 1px solid #ccc;
+}
+ 
+#footer {
+    margin-top: 4em;
+    padding-top: 2em;
+    height: 50px;
+    text-align: center;
+    clear: both;
+    border-top: 1px solid #ccc;
+}
+
+// Style for element wrappers
+
+#wrapper {
+    max-width: 1360px;
+    overflow: hidden;
+    padding: 1em;
+}
+
+#wrap-featured,
+#wrap-main,
+#wrap-triptych,
+#wrap-footer-col {
+    .clearfix();
+}
+
+/**
+ * Style for header
+ */
+
+.sitelogo {
+  position: inherit;
+  margin-top: 2em;
+  padding-right: 2em;
+}
+ 
+.sitetitle {
+  position: relative;
+  color: #003057;
+  font-size: 42px;
+  font-weight: 700;
+  font-family: @fontFamilySiteTitle;
+}
+
+.siteslogan {
+  position: inherit;
+  display: block;
+  padding: 10px;
+  font-size: 25px;
+  font-style: italic;
+  color: @theme;
+  font-family: @fontFamilyHeadings;
+}
+
+.loginlink {
+  float: right;
+  display: block;
+  position: relative;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.loginlink a {
+  color: @theme;
+}
+
+.loginacronym {
+  color: @theme;
+  padding-right: 1em;
+}
+
+.byline {
+  margin-top: 44px;
+  border-top: 1px dashed #ccc;
+  padding-top: 22px;
+  color: #666;
+  font-style: italic;
+}
+
+.byline p {
+  margin-top: 0;
+}
+
+/**
+ * For CForm elements
+ */
+.cf-info {
+    color: #4169E1;
+    font-size: 0.8em !important;
+}
+.cf-info:hover {
+    color: #4169E1;
+    cursor: pointer;
+}
+.cf-desc {
+    padding: 0 10em 0 1em;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/**
+ * For comments
+ */
+
+.comment {
+    margin: 2em;
+    border-top: 1px solid #415846;
+    padding: 10px;
+}
+
+.comment-content {
+    min-width: 60%;
+    margin: 1em;
+}
+
+.comment-content p {
+    padding: 0;
+}
+
+/**
+ * For tags
+ */
+
+.tag-label {
+    padding: 2px;
+    margin: 0 4px 0 4px;
+    background-color: @theme;
+    border-radius: 3px;
+    color: @theme-bg;
+}
+    
+.tag-label a {
+    color: @theme-bg;
+}
+
+.tag-label a:hover {
+    background-color: #222299;
+}
+
+.tag-list {
+    display: inline;
+}
+
+.tag {
+    border: 1px solid #888;
+    border-radius: 3px;
+    width: 150px;
+    float: left;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+.tag:hover {
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+.tag p {
+    padding: 0.5em;
+    margin: 0;
+}
+
+.sidebar-list {
+    margin-left: 0.5em;
+}
+
+.sidebar-list li {
+    margin: 0.5em;
+}
+
+.comment-footer {
+    margin: 5px;
+    border: 1px solid #415846;
+    padding: 0.5em;
+    max-width: 300px;
+}
+
+.comment-footer p {
+    margin: 5px;
+    padding: 5px;
+}
+
+.gravatar {
+    padding: 0 2em 0 2em;
+}
+
+.rss {
+    color: #FF9900;
+    text-shadow: 1px 3px 1px #aaa;
+}
+
+/**
+ * For profile page
+ */
+
+.gold {
+    padding: 0.1em;
+    color: #FFE165;
+    text-shadow: 0 0 5px #333;
+}
+#option-title:hover {
+    cursor: pointer;
+}
+
+.warning {
+    color: #aa0000;
+}
+.warning a:hover {
+    color: #aa0000;
+}
+
+.tip {
+    color: #555;
+    font-style: italic;
+}
+
+.quick-facts li {
+    padding: 0 0 0.5em 2em;
+    color: #555;
+    font-style: italic;
+}
+
+.scrolltotop {
+	width: 40px; 
+	height: 40px;
+	padding: 5px; 
+	text-align: center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	text-decoration: none;
+	position: fixed;
+	bottom: 50px;
+	right: 40px;
+	display: none;
+}
+.scrolltotop:hover {
+	text-decoration: none;
+}
+
+.theme {
+    color: @theme;
+}
+
+/**
+ * For News page
+ */
+ 
+.article-header {
+    font-size: 3.2em;
+    font-weight: 600;
+}
+
+.article-content {
+    padding: 2em 0 1em 0;
+}
+
+.article-footer {
+    padding: 1em 0 0.5em 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.news-thumb {
+    float: right;
+    width: 200px;
+    height: 112px;
+}

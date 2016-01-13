@@ -1,0 +1,45 @@
+
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
+body {
+    background-color: #fff;
+}
+
+#main,
+#lsidebar,
+#rsidebar,
+#flash,
+#featured-1,
+#featured-2,
+#featured-3,
+#triptych-1,
+#triptych-2,
+#triptych-3,
+#footer-column-1,
+#footer-column-2,
+#footer-column-3, 
+#footer-column-4 {
+}
+
+#footer {
+    height: 50px;
+    text-align: center;
+}
+
+#wrapper {
+    background-color: #fff;
+}
+
+.sitetitle {
+    font-family: 'Orbitron', cursive;
+    color: #003057;
+}
+
+.siteslogan {
+    font-family: 'Orbitron', cursive;
+    color: #003057;
+}
+
+.loginlink a {
+  color: #003057;
+}
