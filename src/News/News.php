@@ -31,14 +31,13 @@ class News extends \Anax\MVC\CDatabaseModel
     }
     }
 
-    public function findNews($tag=null, $id)
+    public function findNews($slug=null, $id=null)
     {
-        if (isset($tag) && isset($id)) {
+        if (isset($slug)) {
             $all = $this->query()
-                ->where('tag = ?')
-                ->andWhere('id = ?')
+                ->where('slug = ?')
                 
-                ->execute([$tag, $id]);
+                ->execute([$slug]);
         
             return $all;
         } else {    

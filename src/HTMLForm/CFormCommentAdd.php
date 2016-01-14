@@ -83,7 +83,7 @@ class CFormCommentAdd extends \Mos\HTMLForm\CForm
         $userid = $user->getProperties()['id'];
         $xp = $user->getProperties()['xp'];
         
-        if($this->redirect == 'question') {
+        if(is_numeric($this->pagekey)) {
             $this->question = new \Anax\Question\Question();
             $this->question->setDI($this->di);
             $question = $this->question->findQuestion(null,$this->pagekey);
@@ -92,9 +92,10 @@ class CFormCommentAdd extends \Mos\HTMLForm\CForm
         } else {
             $this->news = new \Anax\News\News();
             $this->news->setDI($this->di);
-            $news = $this->news->findNews(null,$this->pagekey);
+            $news = $this->news->findNews($this->pagekey);
             $comments = $news[0]->getProperties()['comments'];
-            $this->news->customUpdate('news', array('comments' => ($comments + 1)), 'slug = "'.$this->pagekey.'"');
+            $articleid = $news[0]->getProperties()['id'];
+            $this->news->customUpdate('news', array('comments' => ($comments + 1)), 'id = '.$articleid);
         }
         $this->newcomment = new \Phpmvc\Comment\Comment();
         $this->newcomment->setDI($this->di);

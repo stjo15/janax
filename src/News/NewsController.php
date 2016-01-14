@@ -108,7 +108,11 @@ class NewsController implements \Anax\DI\IInjectionAware
         $redirect = 'news/view/' . $id;
         $controller = 'news';
         
-        $news = $this->news->findNews(null,$id);
+        if (is_numeric($id)) {
+            $news = $this->news->findNews(null,$id);
+        } else {
+            $news = $this->news->findNews($id,null);
+        }
         
         $this->theme->setTitle($news[0]->title);
         

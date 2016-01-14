@@ -109,7 +109,7 @@ class CFormCommentEdit extends \Mos\HTMLForm\CForm
         
         $deleted = $this->comment->delete($this->id);
         
-        if(is_int($this->pagekey)) {
+        if(is_numeric($this->pagekey)) {
             $this->question = new \Anax\Question\Question();
             $this->question->setDI($this->di);
             $question = $this->question->findQuestion(null,$this->pagekey);
@@ -118,9 +118,10 @@ class CFormCommentEdit extends \Mos\HTMLForm\CForm
         } else {
             $this->news = new \Anax\News\News();
             $this->news->setDI($this->di);
-            $news = $this->news->findNews(null,$this->pagekey);
+            $news = $this->news->findNews($this->pagekey);
             $comments = $news[0]->getProperties()['comments'];
-            $this->news->customUpdate('news', array('comments' => ($comments - 1)), 'slug = '.$this->pagekey);
+            $articleid = $news[0]->getProperties()['id'];
+            $this->news->customUpdate('news', array('comments' => ($comments - 1)), 'id = '.$articleid);
         }
         
         if($deleted) 
